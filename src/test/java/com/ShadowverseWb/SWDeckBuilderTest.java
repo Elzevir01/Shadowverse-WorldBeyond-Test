@@ -6,11 +6,13 @@ import driver.DriverFactoryDirect;
 
 import org.testng.annotations.Parameters;
 import org.testng.annotations.BeforeTest;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 
 import java.net.MalformedURLException;
 
+import org.apache.log4j.BasicConfigurator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -25,6 +27,8 @@ import pageModel.SVBuilderClass;
 import pageModel.SVEditDeck;
 import pageModel.SVMain;
 
+import dataDeck.RoyalRecipe;
+
 public class SWDeckBuilderTest {
 	String url = "";
 	WebDriver driver;
@@ -37,11 +41,50 @@ public class SWDeckBuilderTest {
 	private static Logger Log = LogManager.getLogger(SWDeckBuilderTest.class);
 	
 			
-  @Test(dataProvider = "dp")
+  @Test(priority = 1)
   public void Test_1_ShadowversePortada() {
+	 // ---web oficcial de shadowverse---//
 	  
+	try { 
+		
+		BasicConfigurator.configure();
+		
+		svm = new SVMain(driver);
+		url = "https://shadowverse-wb.com/";
+		svm.navegar(url);
+		svm.idiomaIngles();
+		svm.deckBuilder();
+		
+		svbc = new SVBuilderClass();
+		svbc.selectRoyalandGo();
+		
+		sved = new SVEditDeck();
+		
+	
+	
+	} catch (InterruptedException e) {
+		e.printStackTrace();
+	}
+	
+	
   }
-
+  
+  @Test(priority = 2, dataProvider = "deckCards", dataProviderClass = RoyalRecipe.class)
+  public void Test_2_ShadowverseDeckBuilder(By carta, int numero, String nombre) {
+	//---esperando primera carta---//
+			Log.info("Buscando y agregando: "+nombre+" :: numero de veces: "+numero+"");
+			
+			// ---generar mazo---//
+			for (int i = 0; i < numero; i++) {
+				sved.esperarElemento(carta);
+				sved.findElemento(carta).click();
+			}
+  }
+  @Test
+  public void Test_3_ShadowverseDeckCheckSave() {
+	  //--si hay 40 cartas 
+	  sved.saveDeck();
+  }
   
   
   @BeforeTest
