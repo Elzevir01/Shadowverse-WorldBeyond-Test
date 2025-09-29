@@ -39,11 +39,13 @@ public class SVMain extends Base{
 	// si la url no esta en idioma ingles, cambia el idioma de la web
 	public void idiomaIngles() {
 		try {
+			Thread.sleep(20000); // la web demora bastante en cargar, usa graficos animados en su portada
+			esperarElemento(menuIdioma);
 			if( urlEsperada != driver.getCurrentUrl() ) {	
 				findElemento(menuIdioma).click();
 				findElemento(idiomaIngles).click();
 				}
-			Thread.sleep(10000); // la web demora bastante en cargar, usa graficos animados en su portada
+			
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
