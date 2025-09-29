@@ -8,6 +8,7 @@
 			<class name="com.ShadowverseWb.SWDeckBuilderTest" />
 		</classes>
 	</test>
+	<!--
 	<test name="EDGE">
 		<parameter name="browser" value="EDGE"></parameter>
 		<parameter name="nodeUrl" value="http://selenium-hub-c:4444/wd/hub"></parameter>
@@ -22,4 +23,5 @@
 			<class name="com.ShadowverseWb.SWDeckBuilderTest" />
 		</classes>
 	</test>
+	 -->
 </suite>
