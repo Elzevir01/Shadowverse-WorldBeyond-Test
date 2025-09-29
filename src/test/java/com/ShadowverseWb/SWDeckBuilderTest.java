@@ -52,7 +52,7 @@ public class SWDeckBuilderTest {
 		svm = new SVMain(driver);
 		url = "https://shadowverse-wb.com/";
 		svm.navegar(url);
-		
+		svm.esperarAnimacionWeb();
 		svm.idiomaIngles();
 		svm.deckBuilder();
 		

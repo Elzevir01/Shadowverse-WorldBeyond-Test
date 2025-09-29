@@ -99,5 +99,14 @@ public class Base {
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.ESCAPE).perform();
 	}
-	
+	// la web demora bastante en cargar, usa graficos animados en su portada
+	public void esperarAnimacionWeb() {
+		try {
+			Thread.sleep(20000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+
+	}
 }
