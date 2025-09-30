@@ -54,6 +54,13 @@ public class Base {
 	public void cursorTo(By elemento) {
 		new Actions(driver).moveToElement(findElemento(elemento)).perform();
 	}
+	public void cursorToJS(By elemento) {
+	    WebElement el = findElemento(elemento);
+	    String script = "var evObj = document.createEvent('MouseEvents');" +
+	            "evObj.initMouseEvent('mouseover',true,true,window,1,0,0,0,0,false,false,false,false,0,null);" +
+	            "arguments[0].dispatchEvent(evObj);";
+	    ((JavascriptExecutor) driver).executeScript(script, el);
+	}
 	public void navegar(String url) {
 		driver.get(url);
 	}

@@ -30,7 +30,8 @@ public class SVMain extends Base{
 	// ir al menu de construccion de mazo
 	public void deckBuilder() throws InterruptedException
 	{
-		cursorTo(deckPortal);
+		//cursorTo(deckPortal);
+		cursorToJS(deckPortal);
 		Thread.sleep(2000);
 		esperarElemento(deckBuilder);
 		findElemento(deckBuilder).click();
