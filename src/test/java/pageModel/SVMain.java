@@ -31,9 +31,9 @@ public class SVMain extends Base{
 	public void deckBuilder() throws InterruptedException
 	{
 		cursorTo(deckPortal);
-		cursorToJS(deckPortal);
+		//cursorToJS(deckPortal);
 		Thread.sleep(2000);
-		esperarElemento(deckBuilder);
+		//esperarElemento(deckBuilder);
 		findElemento(deckBuilder).click();
 		
 	}
