@@ -53,13 +53,13 @@ public class SWDeckBuilderTest {
 		url = "https://shadowverse-wb.com/en/";
 		svm.navegar(url);
 		svm.esperarAnimacionWeb();
-		//svm.idiomaIngles();
+		svm.idiomaIngles();
 		svm.deckBuilder();
 		
 		svbc = new SVBuilderClass();
 		svbc.selectRoyalandGo();
 		
-		sved = new SVEditDeck();
+		//sved = new SVEditDeck();
 		
 	
 	

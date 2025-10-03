@@ -41,8 +41,9 @@ public class SVMain extends Base{
 	public void idiomaIngles() {
 		
 			esperarElemento(menuIdioma);
-			if( urlEsperada != driver.getCurrentUrl() ) {	
+			if( urlEsperada != driver.getCurrentUrl() ) {
 				findElemento(menuIdioma).click();
+				Thread.sleep(2000);
 				findElemento(idiomaIngles).click();
 				}
 	}
