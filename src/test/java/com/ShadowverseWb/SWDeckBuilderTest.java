@@ -57,7 +57,8 @@ public class SWDeckBuilderTest {
 		svm.deckBuilder();
 		
 		svbc = new SVBuilderClass();
-		svbc.selectRoyalandGo();
+		svbc.checkRoyal();
+		svbc.RoyalandGo();
 		
 		//sved = new SVEditDeck();
 		
