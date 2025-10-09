@@ -74,6 +74,8 @@ public class SWDeckBuilderTest {
   @Test(priority = 2, dataProvider = "deckCards", dataProviderClass = RoyalRecipe.class)
   public void Test_2_ShadowverseDeckBuilder(By carta, int numero, String nombre) {
 	//---esperando primera carta---//
+	
+			sved = new SVEditDeck();
 			Log.info("Buscando y agregando: "+nombre+" :: numero de veces: "+numero+"");
 			
 			// ---generar mazo---//
